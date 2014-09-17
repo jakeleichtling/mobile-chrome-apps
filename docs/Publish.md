@@ -37,6 +37,6 @@ To publish your Android application to the Play Store:
 
 2. Open the Xcode project file found under your `platforms/ios` directory:
 
-	open platforms/ios/*.xcodeproj
+	`open platforms/ios/*.xcodeproj`
 
 3. Follow Apple's [App Distribution Guide](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html).
