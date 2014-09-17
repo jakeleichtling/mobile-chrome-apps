@@ -16,41 +16,36 @@ CADT integrates with both Chrome Dev Editor and `cca` to bring you __live deploy
 
 CDE is an IDE built specifically for Chrome Apps. Use it with CADT for live deploy.
 
-### Development
+### Run your Chrome App for Mobile
 
 There are three different workflows that you can use to run your application:
 
-* **Option A**: Live deploy -- use CADT on your mobile device with either CDE or `cca` on your development computer
-
+* **Option A**: Live deploy with CADT -- quick and easy!
 * **Option B**: Use `cca` to package your application and deploy it to your mobile device
-
 * **Option C**: Use a third party IDE, such as Eclipse or Xcode. The use of a third party IDE is entirely optional (but often useful) to assist with launching, configuring, and debugging your hybrid mobile application.
 
-### Option A: Live deploy -- use CADT with either CDE or `cca`
+### Option A: Live deploy with CADT -- quick and easy!
 
-1. Follow these [instructions](https://github.com/MobileChromeApps/chrome-app-developer-tool/) to install CADT.
+1. Follow these [instructions](https://github.com/MobileChromeApps/chrome-app-developer-tool/) to install CADT on your mobile device.
 
-2. Enjoy live deploy! First, run CADT on your mobile device. Then:
+2. Use either `cca` or CDE as your tool to initiate live deploy from your development computer.
+
+3. Enjoy live deploy! First, run CADT on your mobile device. Then:
 
 ####`cca`
 
 Navigate to your Chrome App's directory. Then deploy:
 
 * IP deploy: `cca push --target=IP_ADDRESS`	
-
 * USB deploy:
-
 	* **Android:** To setup, use `adb forward tcp:2424 tcp:2424`
-
 	* **iOS:** To setup, obtain [tcprelay.py](https://github.com/chid/tcprelay) and use `adb tcprelay.py 2424:2424`
-
 	* Use `cca push`
-
 * Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
 
 #### CDE
 
-Select your Chrome App. From the menu (the icon is three horizontal bars in the top left corner), select Deploy to Mobile... and follow the instructions.
+Select your Chrome App. From the menu (the icon is three horizontal bars in the top left corner), select `Deploy to Mobile...` and follow the instructions.
 
 ### Option B: Use `cca` to package your application and deploy it to your mobile device
 
@@ -59,30 +54,26 @@ From the root of your `cca`-generated project directory:
 #### Android
 
 * To run your app on the Android Emulator: `cca emulate android`
-
   * **Note:** This requires that you have set up an emulator. You can run `android avd` to set this up. Download additional emulator images by running `android`. To make the intel images run faster, install [Intel's HAXM](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/).
-
 * To run your app on a connected ARM Android device: `cca run android`. To run on an Intel X86 Android device: `DEPLOY_APK_ARCH=x86 cca run android`
 
 #### iOS
 
 * To run your app on the iOS Simulator: `cca emulate ios`
-
 * To run your app on a connected iOS device: `cca run ios`
-
   * **Note**: To run on a connected iOS device, you must set up a [Provisioning Profile](http://stackoverflow.com/questions/3362652/what-is-a-provisioning-profile-used-for-when-developing-iphone-applications) for that device.
 
 ### Option C: Develop and build using an IDE
 
 #### Android
 
-1. In Eclipse, select `File` -> `Import`.
+1. In Eclipse, select `File` > `Import`.
 2. Choose `Android` > `Existing Android Code Into Workspace`.
 3. Import from the `platforms/android` folder that was created within your project.
     * It is expected to have multiple projects to import.
-    * If you see `xwalk_core_library` listed twice, then you probably accidentally imported from the root of the project.
-4. Click the Play button to run your app.
-  * You will need to create a Run Configuration (as with all Java applications).  You _usually_ get prompted for this the first time automatically.
+    * If `xwalk_core_library` is listed twice, then you probably accidentally imported from the root of the project. Ensure you are importing from `platforms/android` instead.
+4. Click the play button to run your app.
+  * You will need to create a Run Configuration (as with all Java applications). You _usually_ are automatically prompted for this the first time.
   * You will need to manage your devices/emulators the first time as well.
 
 #### iOS
@@ -97,18 +88,18 @@ From the root of your `cca`-generated project directory:
 
     In the top left (beside Run and Stop buttons), there is a dropdown to select target project and device. Ensure that `YourApp` is selected and not `CordovaLib`.
 
-3.  Click the Play button.
+3.  Click the play button.
 
 ### Making changes to your app source code
 
-Your HTML, CSS, and JavaScript files live within the `www` directory of your cca project folder.
+Your HTML, CSS and JavaScript files live within the `www` directory of your cca project folder.
 
-**Important**: After making changes to `www/`, you must run `cca prepare` before deploying your application.  If you are running `cca build`, `cca run`, or `cca emulate` from the command line, the prepare step is done automatically.  If you are developing using Eclipse/XCode, you must run `cca prepare` manually.
+**Important** (for packaging your Chrome App for Mobile; *does not apply to live deploy*): After making changes to `www/`, you must run `cca prepare` before deploying your application. If you are running `cca build`, `cca run`, or `cca emulate` from the command line, the prepare step is done automatically. If you are developing using Eclipse/Xcode, you must run `cca prepare` manually.
 
 ### Debugging
 
-You can debug your Chrome App on mobile the same way that you [debug Cordova applications](https://github.com/phonegap/phonegap/wiki/Debugging-in-PhoneGap).
+You can debug your Chrome App for Mobile the same way that you [debug standard Cordova applications](https://github.com/phonegap/phonegap/wiki/Debugging-in-PhoneGap).
 
-**Important**: In order to use [remote debugging with chrome web inspector for Android](https://developer.chrome.com/devtools/docs/remote-debugging), your desktop Chrome version should match the Chrome WebView on Android.  In practice, this usually means you should be debugging using Chrome Dev/Canary.  (If there is a version mismatch, usually the chrome web inspector window appears completely blank.)
+**Important**: In order to use [remote debugging with chrome web inspector for Android](https://developer.chrome.com/devtools/docs/remote-debugging), your desktop Chrome version should match the Chrome WebView on Android. In practice, this usually means you should be debugging using Chrome Dev/Canary. (If there is a version mismatch, usually the chrome web inspector window appears completely blank.)
 
 _**Done? Continue to [Step 4: Next Steps &raquo;](NextSteps.md)**_
