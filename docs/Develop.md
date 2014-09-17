@@ -33,11 +33,17 @@ There are three different workflows that you can use to run your application:
 ####`cca`
 
 Navigate to your Chrome App's directory and deploy:
+
   	* IP deploy: `cca push --target=IP_ADDRESS`	
+
   	* USB deploy:
+
   		* **Android:** To setup, use `adb forward tcp:2424 tcp:2424`
+
   		* **iOS:** To setup, obtain [tcprelay.py](https://github.com/chid/tcprelay) and use `adb tcprelay.py 2424:2424`
+
   		* Use `cca push`
+  		
   	* Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
 
 #### CDE
