@@ -43,7 +43,7 @@ Navigate to your Chrome App's directory and deploy:
   		* **iOS:** To setup, obtain [tcprelay.py](https://github.com/chid/tcprelay) and use `adb tcprelay.py 2424:2424`
 
   		* Use `cca push`
-  		
+
   	* Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
 
 #### CDE
@@ -55,13 +55,19 @@ Select your Chrome App. From the menu (the icon is three horizontal bars in the 
 From the root of your `cca`-generated project directory:
 
 #### Android
+
 * To run your app on the Android Emulator: `cca emulate android`
+
   * **Note:** This requires that you have set up an emulator. You can run `android avd` to set this up. Download additional emulator images by running `android`. To make the intel images run faster, install [Intel's HAXM](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/).
+
 * To run your app on a connected ARM Android device: `cca run android`. To run on an Intel X86 Android device: `DEPLOY_APK_ARCH=x86 cca run android`
 
 #### iOS
+
 * To run your app on the iOS Simulator: `cca emulate ios`
+
 * To run your app on a connected iOS device: `cca run ios`
+
   * **Note**: To run on a connected iOS device, you must set up a [Provisioning Profile](http://stackoverflow.com/questions/3362652/what-is-a-provisioning-profile-used-for-when-developing-iphone-applications) for that device.
 
 ### Option C: Develop and build using an IDE
