@@ -21,7 +21,9 @@ CDE is an IDE built specifically for Chrome Apps. Use it with CADT for live depl
 There are three different workflows that you can use to run your application:
 
 * **Option A**: Live deploy -- use CADT on your mobile device with either CDE or `cca` on your development computer
+
 * **Option B**: Use `cca` to package your application and deploy it to your mobile device
+
 * **Option C**: Use a third party IDE, such as Eclipse or Xcode. The use of a third party IDE is entirely optional (but often useful) to assist with launching, configuring, and debugging your hybrid mobile application.
 
 ### Option A: Live deploy -- use CADT with either CDE or `cca`
@@ -32,19 +34,19 @@ There are three different workflows that you can use to run your application:
 
 ####`cca`
 
-Navigate to your Chrome App's directory. Then deploy using the following command(s).
+Navigate to your Chrome App's directory. Then deploy:
 
-  	* IP deploy: `cca push --target=IP_ADDRESS`	
+* IP deploy: `cca push --target=IP_ADDRESS`	
 
-  	* USB deploy:
+* USB deploy:
 
-  		* **Android:** To setup, use `adb forward tcp:2424 tcp:2424`
+	* **Android:** To setup, use `adb forward tcp:2424 tcp:2424`
 
-  		* **iOS:** To setup, obtain [tcprelay.py](https://github.com/chid/tcprelay) and use `adb tcprelay.py 2424:2424`
+	* **iOS:** To setup, obtain [tcprelay.py](https://github.com/chid/tcprelay) and use `adb tcprelay.py 2424:2424`
 
-  		* Use `cca push`
+	* Use `cca push`
 
-  	* Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
+	* Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
 
 #### CDE
 
