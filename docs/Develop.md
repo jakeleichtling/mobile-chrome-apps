@@ -24,7 +24,7 @@ There are three different workflows that you can use to run your application:
 * **Option B**: Use `cca` to package your application and deploy it to your mobile device
 * **Option C**: Use a third party IDE, such as Eclipse or Xcode. The use of a third party IDE is entirely optional (but often useful) to assist with launching, configuring, and debugging your hybrid mobile application.
 
-### Option A: Live deploy -- use CADT with CDE or `cca`
+### Option A: Live deploy --- use CADT with CDE or `cca`
 
 1. Follow these [instructions](https://github.com/MobileChromeApps/chrome-app-developer-tool/) to install CADT.
 
