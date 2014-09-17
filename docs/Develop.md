@@ -8,7 +8,7 @@ CADT is an app for your mobile development device that makes it quick and easy t
 
 CADT integrates with both Chrome Dev Editor and `cca` to bring you __live deploy__, allowing you to instantly preview the Chrome App you're editing, running right on your Android or iOS device. When you make a change to the code in your editor, you'll see it straight away on your device.
 
-#### [The `cca` Command-Line Tool](https://github.com/MobileChromeApps/mobile-chrome-apps)
+#### [The `cca` Command Line Tool](https://github.com/MobileChromeApps/mobile-chrome-apps)
 
 `cca` provides all the functionality you need to develop and package Chrome Apps for Mobile from the command line. Use it with CADT to rapidly iterate on your code: live deploy allows you to instantly see your Chrome App running on a connected mobile device. When you are ready to publish your Chrome App for Mobile to the Apple App Store and Google Play Store, use `cca` to bundle up your Chrome App into the proper mobile packages.
 
@@ -24,13 +24,16 @@ There are three different workflows that you can use to run your application:
 * **Option B**: Use `cca` to package your application and deploy it to your mobile device
 * **Option C**: Use a third party IDE, such as Eclipse or Xcode. The use of a third party IDE is entirely optional (but often useful) to assist with launching, configuring, and debugging your hybrid mobile application.
 
-### Option A: Live deploy --- use CADT with CDE or `cca`
+### Option A: Live deploy -- use CADT on your mobile device with CDE or `cca` on your development computer
 
 1. Follow these [instructions](https://github.com/MobileChromeApps/chrome-app-developer-tool/) to install CADT.
 
 2. Enjoy live deploy! First, run CADT on your mobile device. Then:
 
-  * **`cca`:** Navigate to your Chrome App's directory and deploy:
+####`cca`
+
+Navigate to your Chrome App's directory and deploy:
+
   	* IP deploy: `cca push --target=IP_ADDRESS`	
   	* USB deploy:
   		* **Android:** To setup, use `adb forward tcp:2424 tcp:2424`
@@ -38,19 +41,23 @@ There are three different workflows that you can use to run your application:
   		* Use `cca push`
   	* Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
 
-### Option B: Develop and build using the command line
+#### CDE
+
+Select your Chrome App. From the menu (the icon is three horizontal bars in the top left corner), select Deploy to Mobile... and follow the instructions.
+
+### Option B: Use `cca` to package your application and deploy it to your mobile device
 
 From the root of your `cca`-generated project directory:
 
 #### Android
 * To run your app on the Android Emulator: `cca emulate android`
-  * Note: This requires that you've set up an emulator. You can run `android avd` to set this up. Download additional emulator images by running `android`. To make the intel images run faster, install [Intel's HAXM](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/).
+  * **Note:** This requires that you have set up an emulator. You can run `android avd` to set this up. Download additional emulator images by running `android`. To make the intel images run faster, install [Intel's HAXM](http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/).
 * To run your app on a connected ARM Android device: `cca run android`. To run on an Intel X86 Android device: `DEPLOY_APK_ARCH=x86 cca run android`
 
 #### iOS
 * To run your app on the iOS Simulator: `cca emulate ios`
 * To run your app on a connected iOS device: `cca run ios`
-  * Note: This requires that you've set up a [Provisioning Profile](http://stackoverflow.com/questions/3362652/what-is-a-provisioning-profile-used-for-when-developing-iphone-applications) for your device.
+  * **Note**: To run on a connected iOS device, you must set up a [Provisioning Profile](http://stackoverflow.com/questions/3362652/what-is-a-provisioning-profile-used-for-when-developing-iphone-applications) for that device.
 
 ### Option C: Develop and build using an IDE
 
