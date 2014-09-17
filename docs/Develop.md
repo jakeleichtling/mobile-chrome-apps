@@ -32,7 +32,7 @@ There are three different workflows that you can use to run your application:
 
 ####`cca`
 
-Navigate to your Chrome App's directory. Then deploy using the following commands.
+Navigate to your Chrome App's directory. Then deploy using the following command(s).
 
   	* IP deploy: `cca push --target=IP_ADDRESS`	
 
