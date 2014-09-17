@@ -46,7 +46,7 @@ Navigate to your Chrome App's directory. Then deploy:
 
 	* Use `cca push`
 
-	* Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
+* Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
 
 #### CDE
 
