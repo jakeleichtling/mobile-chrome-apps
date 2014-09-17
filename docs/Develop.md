@@ -1,14 +1,42 @@
 ## Step 3: Develop
 
-There are three workflows that you can use to run your application:
+### Tools Overview
 
-* Option A: Use the [Chrome App Developer Tool](https://github.com/MobileChromeApps/chrome-app-developer-tool/)
-* Option B: From the command line, using the `cca` tool, or
-* Option C: By using an IDE, like Eclipse or Xcode. The use of an IDE is entirely optional (but often useful) to assist with launching, configuring, and debugging your hybrid mobile application.
+#### [Chrome App Developer Tool for Mobile (CADT)](https://github.com/MobileChromeApps/chrome-app-developer-tool/)
 
-### Option A: Use the Chrome App Developer Tool
+CADT is an app for your mobile development device that makes it quick and easy to see your code in action. It provides the Cordova framework of Chrome Apps for Mobile so you can test your code by simply pushing your Chrome App assets to your mobile device (made easy with our tools), which is must faster than packaging up the entire mobile app.
 
-For details, refer to the Chrome App Developer Tool [README.md](https://github.com/MobileChromeApps/chrome-app-developer-tool/)
+CADT integrates with both Chrome Dev Editor and `cca` to bring you __live deploy__, allowing you to instantly preview the Chrome App you're editing, running right on your Android or iOS device. When you make a change to the code in your editor, you'll see it straight away on your device.
+
+#### [The `cca` Command-Line Tool](https://github.com/MobileChromeApps/mobile-chrome-apps)
+
+`cca` provides all the functionality you need to develop and package Chrome Apps for Mobile from the command line. Use it with CADT to rapidly iterate on your code: live deploy allows you to instantly see your Chrome App running on a connected mobile device. When you are ready to publish your Chrome App for Mobile to the Apple App Store and Google Play Store, use `cca` to bundle up your Chrome App into the proper mobile packages.
+
+#### [Chrome Dev Editor (CDE)](https://github.com/dart-lang/chromedeveditor)
+
+CDE is an IDE built specifically for Chrome Apps. Use it with CADT for live deploy.
+
+### Development
+
+There are three different workflows that you can use to run your application:
+
+* **Option A**: Live deploy -- use CADT on your mobile device with CDE or `cca` on your development computer
+* **Option B**: Use `cca` to package your application and deploy it to your mobile device
+* **Option C**: Use a third party IDE, such as Eclipse or Xcode. The use of a third party IDE is entirely optional (but often useful) to assist with launching, configuring, and debugging your hybrid mobile application.
+
+### Option A: Live deploy -- use CADT with CDE or `cca`
+
+1. Follow these [instructions](https://github.com/MobileChromeApps/chrome-app-developer-tool/) to install CADT.
+
+2. Enjoy live deploy! First, run CADT on your mobile device. Then:
+
+  * **`cca`:** Navigate to your Chrome App's directory and deploy:
+  	* IP deploy: `cca push --target=IP_ADDRESS`	
+  	* USB deploy:
+  		* **Android:** To setup, use `adb forward tcp:2424 tcp:2424`
+  		* **iOS:** To setup, obtain [tcprelay.py](https://github.com/chid/tcprelay) and use `adb tcprelay.py 2424:2424`
+  		* Use `cca push`
+  	* Use `cca push [--target=IP_ADDRESS] --watch` to automatically refresh the Chrome App when the code is updated.
 
 ### Option B: Develop and build using the command line
 
